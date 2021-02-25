@@ -17,32 +17,36 @@ $dark-grey: #6e8098;
 }
 
 // Heading styling and body styling
-
 // NOTE THE FONT SIZE IN THE ROOT IS 10PX
 
 @mixin heading-1 {
     font-size: 2.8rem;
     line-height: 3.4rem;
+    @include font-type
 }
 
 @mixin heading-2 {
     font-size: 2.4rem;
     line-height: 2.9rem;
+    @include font-type
 }
 
 @mixin heading-3 {
     font-size: 2.0rem;
     line-height: 2.4rem;
+    @include font-type
 }
 
 @mixin heading-4 {
     font-size: 1.4rem;
     line-height: 1.8rem;
+    @include font-type
 }
 
 @mixin body-text {
     font-size: 1.6rem;
     line-height: 26px;
+    @include font-type
 }
 
 // Buttons 
@@ -56,7 +60,7 @@ $dark-grey: #6e8098;
     text-decoration: none;
     display: inline-block;
     font-size: 1.6rem;
-
+    cursor: pointer;
     &:hover {
         background: $violet-light;
     }
@@ -70,7 +74,7 @@ $dark-grey: #6e8098;
     text-decoration: none;
     display: inline-block;
     font-size: 1.6rem;
-
+    cursor: pointer;
     &:hover {
         background: lighten($violet-light,20%);
     }
@@ -84,7 +88,7 @@ $dark-grey: #6e8098;
     text-decoration: none;
     display: inline-block;
     font-size: 1.6rem;
-
+    cursor: pointer;
     &:hover {
         background: $light-grey;
     }
