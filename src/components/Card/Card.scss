@@ -1,0 +1,77 @@
+@import '../../utilities/variables';
+
+.card {
+    width: 350px;
+    height: 228px;
+    border-radius: 6px;
+    background-color: $white;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    
+    &:hover {
+        transform: scale(1.05);
+        
+    }
+    &__logo {
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        top: -20px;
+        left: 32px;
+        z-index: 2;
+        border-radius: 10px !important;
+        border: 1px solid $grey;
+        background-color: $light-grey;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: fill;
+            border-radius: 10px !important;
+        }
+    }
+
+    &__container {
+        height: 100%;
+        padding: 4.9rem 3.2rem 3.2rem 3.2rem;
+    }
+
+    &__job-info {
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &__job-type {
+        width: 100%;
+        display: flex;
+        p {
+            @include heading-4;
+            color: #6E8098;
+            padding-bottom: 10px;
+        }
+    }
+
+    &__job-title {
+        @include heading-4;
+        color: #19202D;
+        text-transform: capitalize;
+    }
+    &__job-recruiter {
+        color: #6E8098;
+        @include body-text;
+        text-transform: capitalize;
+        padding: 10px 0 20px 0;
+    }
+
+    &__location {
+        @include heading-4;
+        height: 20%;
+        color: $violet;
+        font-weight: bold;
+        display: flex;
+        align-items: flex-end;
+    }
+}

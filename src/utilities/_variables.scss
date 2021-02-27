@@ -54,12 +54,14 @@ $dark-grey: #6e8098;
 @mixin button-1 {
     background: $violet;
     border: none;
+    border-radius: 5px;
     color: white;
     padding: 1.5rem 3.2rem;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 1.6rem;
+    transition: all 0.4s ease;
     cursor: pointer;
     &:hover {
         background: $violet-light;

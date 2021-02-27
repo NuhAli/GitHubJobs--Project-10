@@ -11,10 +11,16 @@ const Topbanner = (props) => {
                     devjobs
                 </h1>
                 <ThemeSwitcher
-                    handleCheck={props.handleCheck}
+                    handleTheme={props.handleTheme}
                 />
             </div>
-            <Headerform />
+            <Headerform
+                searchQuery={props.searchQuery}
+                searchLocation={props.searchLocation}
+                workType={props.workType}
+                handleChange = {props.handleChange}
+                handleSubmit={props.handleSubmit}
+            />
         </header>
     )
 }
