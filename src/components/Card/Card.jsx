@@ -12,9 +12,11 @@ const Card = (props) => {
         location,
         title,
         company_logo } = props.data
+        
+        const {theme} = props
 
     return (
-        <div className="card">
+        <div className={`card card--${theme}`}>
             <div className="card__logo">
                 <img
                     src={company_logo}
@@ -28,7 +30,7 @@ const Card = (props) => {
                         <span><BsDot /></span>
                         <p>{type}</p>
                     </div>
-                    <div className="card__job-title">
+                    <div className={`card__job-title card__job-title--${theme}`}>
                         <h3>
                             {
                                 title

@@ -9,14 +9,29 @@
 :root {
   font-size: 10px;
   @include font-type;
-  
+}
+
+html, body, #root, .App {
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
 }
 
 .App {
+  display: flex;
+  flex-direction: column;
   &--light {
     background-color: $light-grey
   }
   &--dark {
-    background-color: $dark-blue
+    background-color: $night-blue
+  }
+  .App__display-area {
+    min-height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 }

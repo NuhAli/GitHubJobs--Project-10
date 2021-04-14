@@ -3,9 +3,11 @@ import magGlassIcon from '../../utilities/desktop/icon-search.svg';
 import locationIcon from '../../utilities/desktop/icon-location.svg';
 
 const Headerform = (props) => {
+    const {theme} = props
+
     return (
-        <div className="header__form">
-            <div className="header__search-query">
+        <div className={`header__form header__form--${theme}`}>
+            <div className={`header__search-query header__search-query--${theme}`}>
                 <img
                     src={magGlassIcon}
                     alt="looking glass"
@@ -18,7 +20,7 @@ const Headerform = (props) => {
                     placeholder="Filter by title, companies, expertise ...."
                 />
             </div>
-            <div className="header__location-query">
+            <div className={`header__location-query header__location-query--${theme}`}>
                 <img 
                     src={locationIcon}
                     alt="location"

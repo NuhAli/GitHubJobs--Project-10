@@ -1,0 +1,63 @@
+@import '../../utilities/variables';
+
+.header__card {
+    position: absolute;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 730px;
+    height: 140px;
+    border-radius: 6px;
+    z-index: 3;
+    
+    &--light {
+        background-color: $white;
+    }
+
+    &--dark {
+        background-color: $dark-blue;
+    }
+
+    &__container {
+        display: grid;
+        height: 100%;
+        width: 100%;
+        grid-template-columns: 140px 590px;
+    }
+
+    &__logo {
+        width: 140px;
+        height: 140px;
+        object-fit: contain;
+    }
+
+    &__title-area {
+        padding: 4.2rem 4.0rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        &--text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            h2 {
+                margin-bottom: 1.3rem;
+                @include heading-5;
+            }
+            p {
+                @include heading-6;
+                color: rgba(110, 128, 152, 1)
+            }
+        }
+        &--button {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            button {
+                @include button-3
+            }
+        }
+    }
+}

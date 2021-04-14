@@ -43,6 +43,21 @@ $dark-grey: #6e8098;
     @include font-type
 }
 
+@mixin heading-5 {
+    font-weight: bold;
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+    color: #19202D;
+    @include font-type
+}
+
+@mixin heading-6 {
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    color: #19202D;
+    @include font-type
+}
+
 @mixin body-text {
     font-size: 1.6rem;
     line-height: 26px;
@@ -63,10 +78,12 @@ $dark-grey: #6e8098;
     font-size: 1.6rem;
     transition: all 0.4s ease;
     cursor: pointer;
+
     &:hover {
         background: $violet-light;
     }
 }
+
 @mixin button-2 {
     background: $grey;
     border: none;
@@ -77,10 +94,12 @@ $dark-grey: #6e8098;
     display: inline-block;
     font-size: 1.6rem;
     cursor: pointer;
+
     &:hover {
-        background: lighten($violet-light,20%);
+        background: lighten($violet-light, 20%);
     }
 }
+
 @mixin button-2-dark {
     background: $dark-grey;
     border: none;
@@ -91,7 +110,24 @@ $dark-grey: #6e8098;
     display: inline-block;
     font-size: 1.6rem;
     cursor: pointer;
+
     &:hover {
         background: $light-grey;
+    }
+}
+
+@mixin button-3 {
+    background: $light-grey;
+    border: none;
+    color: $violet;
+    padding: 1.5rem 3.2rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.6rem;
+    cursor: pointer;
+
+    &:hover {
+        background: lighten($violet-light, 20%);
     }
 }

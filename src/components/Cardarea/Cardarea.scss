@@ -1,7 +1,8 @@
 .cards {
     width: 1110px;
-    margin: 10rem auto;
-    padding-top: 2.5rem;
+    min-height: 100%;
+    margin: 0 auto;
+    padding: 2.5rem 0;
     height: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);

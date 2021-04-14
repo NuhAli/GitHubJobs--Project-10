@@ -14,6 +14,15 @@
         transform: scale(1.05);
         
     }
+
+    &--light {
+        background-color: $white
+    }
+
+    &--dark {
+        background-color: $dark-blue
+    }
+
     &__logo {
         position: absolute;
         height: 50px;
@@ -56,8 +65,17 @@
 
     &__job-title {
         @include heading-4;
-        color: #19202D;
         text-transform: capitalize;
+        &--light {
+            color: #19202D;
+            &:hover {
+                color: #6E8098
+            }
+        }
+    
+        &--dark {
+            color: #6E8098
+        }
     }
     &__job-recruiter {
         color: #6E8098;

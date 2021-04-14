@@ -1,0 +1,234 @@
+@import '../../utilities/variables';
+
+.description {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    &--light {
+        background-color: $light-grey
+    }
+
+    &--dark {
+        background-color: $night-blue
+    }
+
+    &__container {
+        max-width: 730px;
+        margin: 0 auto;
+        padding: 48px 43px 48px 48px;
+        background: rgba(255, 255, 255, 1);
+    }
+
+    &__top-banner {
+        max-height: auto;
+        min-height: 87px;
+        position: relative;
+        display: grid;
+        grid-template-columns: 75% 25%;
+        background: rgba(255, 255, 255, 1);
+        margin-bottom: 4rem;
+
+        .job-details {
+            width: 100%;
+            height: 100%;
+
+            .row {
+                width: 100%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                p {
+                    font-size: 1.6rem;
+                    color: rgba(110, 128, 152, 1);
+                }
+
+                h3 {
+                    @include heading-1;
+                    margin: 1rem 0;
+                }
+
+                .dot {
+                    margin: 1rem 0;
+                    color: rgba(110, 128, 152, 1);
+                }
+
+                .job-location {
+                    font-size: 1.4rem;
+                    line-height: 1.4rem;
+                    font-weight: bold;
+                    color: rgba(89, 100, 224, 1);
+                }
+                
+            }
+        }
+
+        &__apply {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            button {
+                margin-right: 0.5rem;
+                @include button-1
+            }
+        }
+    }
+
+    &__details {
+        p {
+            @include body-text;
+            color: rgba(110, 128, 152, 1);
+            padding: 28px;
+
+            strong {
+                display: block;
+            }
+        }
+
+        strong {
+            color: rgba(25, 32, 45, 1);
+        }
+
+        a {
+            color: $violet;
+            text-decoration: underline;
+        }
+
+        ul {
+            padding-bottom: 4.3rem;
+            list-style-type: none;
+            @include body-text;
+            color: rgba(110, 128, 152, 1);
+            li {
+                display: flex;
+                align-items: baseline;
+                justify-content: flex-start;
+                text-align: left;
+                position: relative;
+                left: 2.7rem;
+
+                &::before {
+                    content: ".";
+                    color: $violet;
+                    font-size: 5rem;
+                    margin-right: 3.2rem;
+                    position: relative;
+                    bottom: 0.25rem;
+                }
+            }
+        }
+
+        ol {
+            list-style: none;
+            counter-reset: list-counter;
+            @include body-text;
+            color: rgba(110, 128, 152, 1);
+
+            li {
+                margin: 0.8rem;
+                counter-increment: list-counter;
+                text-align: left;
+                text-transform: capitalize;
+
+                &::before {
+                    content: counter(list-counter) "";
+                    color: $violet;
+                    font-size: 1.6rem;
+                    margin-right: 3.2rem;
+                }
+            }
+        }
+    }
+
+    &__apply {
+        background-image: url("../../utilities/desktop/bg-pattern-detail-footer.svg");
+        background-size: cover;
+        width: 730px;
+        max-height: auto;
+        min-height: 261px;
+        margin: 3.2rem auto 14rem auto;
+        padding: 4.0rem 4.3rem 4.1rem 4.8rem;
+        border-radius: 8px;
+        color: rgba(255, 255, 255, 1);
+
+        h3 {
+            font-size: 2rem;
+            line-height: 2rem;
+            margin-bottom: 2.8rem;
+            font-weight: 700;
+        }
+
+        p {
+            margin-bottom: 2.8rem;
+            @include body-text;
+        }
+
+        a {
+            color: rgba(255, 255, 255, 1);
+            text-decoration: underline;
+            @include body-text;
+        }
+    }
+
+    .bottom-banner {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        min-height: 96px;
+        max-height: auto;
+        background-color: #ffff;
+
+        &__container {
+            margin: 0 auto;
+            max-width: 730px;
+            padding: 2.3rem 0 2.2rem 0;
+        }
+
+        &__row {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 33% 67%;
+        }
+
+        &__job-info {
+            height: 100%;
+            display: grid;
+            grid-template-rows: auto auto;
+            row-gap: 1.2rem;
+            .details {
+                p {
+                    font-size: 1.6rem;
+                    color: rgba(110, 128, 152, 1);
+                }
+            }
+
+            .job-title {
+                p {
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 20px;
+                    line-height: 20px;
+                }
+            }
+        }
+
+        &__apply {
+            display: flex;
+            justify-content: flex-end;
+            button {
+                @include button-1
+            }
+        }
+    }
+}
