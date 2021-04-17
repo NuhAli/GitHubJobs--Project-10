@@ -9,20 +9,23 @@ const Cardtitle = (props) => {
         company_logo
     } = props.jobInfo[0]
 
+    const { theme } = props
+
     return (
-        <section className={`header__card header__card--${props.theme}`}>
-            <div className="header__card__container">
-                <img 
-                    src={company_logo} alt="logo"
-                    className="header__card__logo" 
-                />
-                <div className="header__card__title-area">
-                    <div className="header__card__title-area--text">
-                        <h2>{company}</h2>
-                        <p>{company_url}</p>
+        <section className={`header-card header-card--${theme}`}>
+            <div className="header-card__container">
+                <img src={company_logo} alt="logo" className="header-card__logo" />
+                <div className="header-card__information">
+                    <div className={`header-card__text header-card__text--${theme}`}>
+                        <h2>
+                            {company}
+                        </h2>
+                        <p>
+                            {company_url}
+                        </p>
                     </div>
-                    <div className="header__card__title-area--button">
-                        <a href={company_url}>
+                    <div className={`header-card__button header-card__button--${theme}`}>
+                        <a href={company_url} target="_blank" rel="noreferrer">
                             <button>
                                 Company site
                             </button>

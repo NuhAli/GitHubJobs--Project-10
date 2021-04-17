@@ -9,19 +9,39 @@
     align-items: center;
     position: relative;
 
-    &--light {
-        background-color: $light-grey
-    }
-
-    &--dark {
-        background-color: $night-blue
-    }
-
     &__container {
         max-width: 730px;
         margin: 0 auto;
         padding: 48px 43px 48px 48px;
-        background: rgba(255, 255, 255, 1);
+        &--light {
+            background-color: $white;
+        }
+    
+        &--dark {
+            background-color: $dark-blue;
+            p {
+                color: $dark-grey;
+            }
+            h3 {
+                color: $white;
+            }
+
+            .description__details {
+                h1,h2,h3,h4,h5,h6{
+                    color: $white;
+                }
+
+                p {
+                    color:rgba(157, 174, 194, 1);
+                    ;
+                }
+
+                li {
+                    color:rgba(157, 174, 194, 1);
+                    ;
+                }
+            }
+        }
     }
 
     &__top-banner {
@@ -30,7 +50,6 @@
         position: relative;
         display: grid;
         grid-template-columns: 75% 25%;
-        background: rgba(255, 255, 255, 1);
         margin-bottom: 4rem;
 
         .job-details {
@@ -83,11 +102,15 @@
     }
 
     &__details {
+        h1,h2,h3,h4,h5,h6 {
+            display: block;
+            padding: 28px 0;
+        }
         p {
             @include body-text;
             color: rgba(110, 128, 152, 1);
-            padding: 28px;
-
+            padding: 28px 0;
+            
             strong {
                 display: block;
             }
@@ -186,7 +209,21 @@
         width: 100%;
         min-height: 96px;
         max-height: auto;
-        background-color: #ffff;
+
+        &--light {
+            background-color: $white;
+        }
+    
+        &--dark {
+            background-color: $dark-blue;
+
+            p {
+                color: white;
+            }
+            span {
+                color: $dark-grey;
+            }
+        }
 
         &__container {
             margin: 0 auto;
@@ -206,12 +243,6 @@
             display: grid;
             grid-template-rows: auto auto;
             row-gap: 1.2rem;
-            .details {
-                p {
-                    font-size: 1.6rem;
-                    color: rgba(110, 128, 152, 1);
-                }
-            }
 
             .job-title {
                 p {
@@ -219,6 +250,13 @@
                     font-weight: bold;
                     font-size: 20px;
                     line-height: 20px;
+                }
+            }
+            
+            .details {
+                span {
+                    font-size: 1.6rem;
+                    color: rgba(110, 128, 152, 1);
                 }
             }
         }

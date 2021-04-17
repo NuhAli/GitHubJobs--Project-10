@@ -11,8 +11,7 @@
     cursor: pointer;
     
     &:hover {
-        transform: scale(1.05);
-        
+        transform: scale(1.01);
     }
 
     &--light {
@@ -31,14 +30,7 @@
         left: 32px;
         z-index: 2;
         border-radius: 10px !important;
-        border: 1px solid $grey;
         background-color: $light-grey;
-        img {
-            height: 100%;
-            width: 100%;
-            object-fit: fill;
-            border-radius: 10px !important;
-        }
     }
 
     &__container {
@@ -58,9 +50,15 @@
         display: flex;
         p {
             @include heading-4;
-            color: #6E8098;
-            padding-bottom: 10px;
+            color: $dark-grey;
         }
+
+        span {
+            position: relative;
+            top: 4px;
+            padding: 0 1.2rem;
+        }
+        padding-bottom: 10px;
     }
 
     &__job-title {

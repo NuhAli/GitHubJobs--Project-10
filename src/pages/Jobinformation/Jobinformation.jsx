@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactTimeAgo from 'react-time-ago'
 import DOMPurify from 'dompurify'
 import './Jobinformation.scss'
 import { BsDot } from 'react-icons/bs'
@@ -16,14 +17,20 @@ const Jobinformation = (props) => {
         how_to_apply
     } = props.jobInfo[0]
 
+    const { theme } = props
+
     return (
         <>
             <section className="description">
-                <div className="description__container">
+                <div className={`description__container description__container--${theme}`}>
                     <div className="description__top-banner">
                         <div className="job-details">
                             <div className="row">
-                                <p>{created_at}</p>
+                                <p>
+                                    {
+                                        <ReactTimeAgo date={created_at} timeStyle="round-day" />
+                                    }
+                                </p>
                                 <BsDot className="dot" />
                                 <p>{type}</p>
                             </div>
@@ -62,7 +69,7 @@ const Jobinformation = (props) => {
                         }}>
                     </div>
                 </div>
-                <div className="bottom-banner">
+                <div className={`bottom-banner bottom-banner--${theme}`}>
                     <div className="bottom-banner__container">
                         <div className="bottom-banner__row">
                             <div className="bottom-banner__job-info">
@@ -72,7 +79,7 @@ const Jobinformation = (props) => {
                                     </p>
                                 </div>
                                 <div className="details">
-                                    <p>{company_url}</p>
+                                    <span>{company_url}</span>
                                 </div>
                             </div>
                             <div className="bottom-banner__apply">

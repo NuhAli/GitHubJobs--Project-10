@@ -1,6 +1,5 @@
 import React from 'react';
-import Timesince from '../../utilities/Date'
-import { BsDot } from 'react-icons/bs'
+import ReactTimeAgo from 'react-time-ago'
 import './Card.scss';
 
 const Card = (props) => {
@@ -12,22 +11,25 @@ const Card = (props) => {
         location,
         title,
         company_logo } = props.data
-        
-        const {theme} = props
+
+    const { theme } = props
 
     return (
         <div className={`card card--${theme}`}>
-            <div className="card__logo">
-                <img
-                    src={company_logo}
-                    alt={company}
-                />
-            </div>
+            <img
+                src={company_logo}
+                alt={company}
+                className="card__logo"
+            />
             <div className="card__container">
                 <div className="card__job-info">
                     <div className="card__job-type">
-                        <p>{created_at}</p>
-                        <span><BsDot /></span>
+                        <p>
+                            {
+                                <ReactTimeAgo date={created_at} timeStyle="mini" />
+                            }
+                        </p>
+                        <span>.</span>
                         <p>{type}</p>
                     </div>
                     <div className={`card__job-title card__job-title--${theme}`}>
