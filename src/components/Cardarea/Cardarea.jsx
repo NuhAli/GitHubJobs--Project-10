@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom'
 import Card from '../Card/Card'
 import './Cardarea.scss'
 const Cardarea = (props) => {
+
     let cards
+
     const populateCards = () => {
         if (props.data.length > 0) {
             cards = props.data.map(job => {
@@ -11,7 +13,7 @@ const Cardarea = (props) => {
                     <Link
                         to={`/moreinformation`}
                         key={job.id}
-                        onClick={()=>{
+                        onClick={() => {
                             props.select(job.id)
                         }}>
                         <Card
@@ -27,12 +29,31 @@ const Cardarea = (props) => {
         }
     }
 
+    const renderButton = () => {
+        if (props.data.length === 12) {
+            return (
+                <div className="button-area">
+                    <button onClick={props.moreData}>
+                        Load More
+                    </button>
+                </div>
+            )
+        } else if (props.data.length > 12) {
+            return
+        }
+    }
+
     return (
-        <section className="cards">
+        <>
+            <section className="cards">
+                {
+                    populateCards()
+                }
+            </section>
             {
-                populateCards()
+                renderButton()
             }
-        </section>
+        </>
     )
 }
 

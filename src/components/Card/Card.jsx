@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactTimeAgo from 'react-time-ago'
+import { GoPrimitiveDot } from 'react-icons/go'
 import './Card.scss';
 
 const Card = (props) => {
@@ -29,7 +30,7 @@ const Card = (props) => {
                                 <ReactTimeAgo date={created_at} timeStyle="mini" />
                             }
                         </p>
-                        <span>.</span>
+                        <GoPrimitiveDot id="dot" />
                         <p>{type}</p>
                     </div>
                     <div className={`card__job-title card__job-title--${theme}`}>

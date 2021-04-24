@@ -13,31 +13,40 @@
         max-width: 730px;
         margin: 0 auto;
         padding: 48px 43px 48px 48px;
+
         &--light {
             background-color: $white;
         }
-    
+
         &--dark {
             background-color: $dark-blue;
+
             p {
                 color: $dark-grey;
             }
+
             h3 {
                 color: $white;
             }
 
             .description__details {
-                h1,h2,h3,h4,h5,h6{
+
+                h1,
+                h2,
+                h3,
+                h4,
+                h5,
+                h6 {
                     color: $white;
                 }
 
                 p {
-                    color:rgba(157, 174, 194, 1);
+                    color: rgba(157, 174, 194, 1);
                     ;
                 }
 
                 li {
-                    color:rgba(157, 174, 194, 1);
+                    color: rgba(157, 174, 194, 1);
                     ;
                 }
             }
@@ -83,7 +92,7 @@
                     font-weight: bold;
                     color: rgba(89, 100, 224, 1);
                 }
-                
+
             }
         }
 
@@ -102,17 +111,25 @@
     }
 
     &__details {
-        h1,h2,h3,h4,h5,h6 {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             display: block;
             padding: 28px 0;
+            font-weight: 700;
         }
+
         p {
             @include body-text;
             color: rgba(110, 128, 152, 1);
-            padding: 28px 0;
-            
+            padding: 2.8rem 0 2.4rem 0;
+
             strong {
-                display: block;
+                display: inline-block;
             }
         }
 
@@ -126,26 +143,25 @@
         }
 
         ul {
-            padding-bottom: 4.3rem;
-            list-style-type: none;
             @include body-text;
             color: rgba(110, 128, 152, 1);
+            width: 100%;
+            list-style-position: outside;
             li {
-                display: flex;
-                align-items: baseline;
-                justify-content: flex-start;
-                text-align: left;
+                display: list-item;
                 position: relative;
-                left: 2.7rem;
-
-                &::before {
-                    content: ".";
+                left: 1.4rem;
+                padding-bottom: 1.2rem;
+                &::marker {
                     color: $violet;
-                    font-size: 5rem;
-                    margin-right: 3.2rem;
-                    position: relative;
-                    bottom: 0.25rem;
+                    font-size: 1.8rem;
+                    letter-spacing: 2rem;
                 }
+
+                &:last-child {
+                    padding-bottom: 0;
+                }
+
             }
         }
 
@@ -164,7 +180,7 @@
                 &::before {
                     content: counter(list-counter) "";
                     color: $violet;
-                    font-size: 1.6rem;
+                    font-size: 1.8rem;
                     margin-right: 3.2rem;
                 }
             }
@@ -213,13 +229,14 @@
         &--light {
             background-color: $white;
         }
-    
+
         &--dark {
             background-color: $dark-blue;
 
             p {
                 color: white;
             }
+
             span {
                 color: $dark-grey;
             }
@@ -252,7 +269,7 @@
                     line-height: 20px;
                 }
             }
-            
+
             .details {
                 span {
                     font-size: 1.6rem;
@@ -263,8 +280,11 @@
 
         &__apply {
             display: flex;
+            align-items: center;
             justify-content: flex-end;
+
             button {
+                height: auto;
                 @include button-1
             }
         }

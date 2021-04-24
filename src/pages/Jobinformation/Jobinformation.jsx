@@ -9,7 +9,6 @@ const Jobinformation = (props) => {
     const {
         created_at,
         type,
-        company,
         company_url,
         location,
         title,
@@ -61,7 +60,7 @@ const Jobinformation = (props) => {
                     <h3>How to apply</h3>
                     <p>
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis, officiis illo hic, impedit totam enim aliquid ex quasi soluta laborum cupiditate, iure provident alias! Sunt doloribus voluptates voluptatum mollitia debitis!
-                        </p>
+                    </p>
                     <div
                         className="description__apply-link"
                         dangerouslySetInnerHTML={{

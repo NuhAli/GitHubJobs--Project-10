@@ -13,6 +13,7 @@ function App() {
   const [workType, setWorkType] = useState(false)
   const [data, setData] = useState("")
   const [selectedJob, setSelectedJob] = useState({})
+  const [loading,setLoading] = useState(false)
 
   const handleTheme = (event) => {
     const { checked } = event.target
@@ -31,7 +32,16 @@ function App() {
   }
 
   const handleSubmit = (e) => {
+    setLoading(true)
     e.preventDefault()
+    Data.getJobs(searchQuery, searchLocation, workType).then(response => {
+      const slicedResponse = response.slice(0,12)
+      setLoading(false)
+      setData(slicedResponse)
+    })
+  }
+
+  const fetchMoreJobs = () => {
     Data.getJobs(searchQuery, searchLocation, workType).then(response => {
       setData(response)
     })
@@ -63,6 +73,7 @@ function App() {
         <Route exact path="/">
           <Cardarea
             data={data}
+            moreData={fetchMoreJobs}
             theme={theme}
             select={selectJob}
           />
